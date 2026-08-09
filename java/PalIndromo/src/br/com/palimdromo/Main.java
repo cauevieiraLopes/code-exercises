@@ -21,7 +21,7 @@ public class Main {
         texto = texto.replace("-", "");
         texto = texto.toUpperCase();
 
-        boolean ePalimdromo = Funcoes.Comparar(texto);
+        boolean ePalimdromo = Funcoes.comparar(texto);
 
         if(ePalimdromo) System.out.println("É um palíndromo.");
         else {

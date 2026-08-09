@@ -2,7 +2,7 @@ package br.com.palimdromo.funcoes;
 
 public class Funcoes {
 
-    public static boolean Comparar(String texto) {
+    public static boolean comparar(String texto) {
         int extrairNumeroOposto = 0;
         int contador = 0;
 
