@@ -1,32 +1,47 @@
-# 🎓 Atividades Acadêmicas - Técnico em ADS
+# 📂 Portfólio de Exercícios & Estudos
 
-Este repositório armazena os projetos, exercícios e estudos desenvolvidos durante o curso **Técnico em Análise e Desenvolvimento de Sistemas (ADS)** no **SENAI CIMATEC**, além de incluir atividades realizadas por iniciativa própria e conteúdos provenientes de cursos complementares externos à formação.
+Este repositório reúne os exercícios, desafios de lógica e pequenos projetos que venho desenvolvendo no meu aprendizado como desenvolvedor. A maior parte do conteúdo é praticada por iniciativa própria — parte dele também vem de atividades da minha formação técnica em Análise e Desenvolvimento de Sistemas (SENAI CIMATEC) e de cursos complementares.
 
-O objetivo é documentar o meu progresso técnico, organizar o conhecimento adquirido e construir um portfólio para o mercado de tecnologia.
-
----
-
-## 🏛️ Instituição
-**SENAI CIMATEC** - Salvador, BA.
+O objetivo aqui é simples: documentar minha evolução técnica, treinar lógica e estrutura de código em diferentes linguagens, e manter um histórico organizado do que venho estudando.
 
 ---
 
-## 🛠️ Tecnologias em Foco (1º Semestre)
+## 🗂️ Estrutura
 
-Atualmente estou focando nas bases da programação e desenvolvimento:
+O repositório é organizado por **linguagem** e, dentro de cada uma, por **nível de complexidade** — assim dá pra encontrar rapidamente o que você procura, e também entender a progressão do meu aprendizado.
 
+```
+├── java/
+│   ├── fundamentos/     → sintaxe básica, condicionais, loops, funções
+│   ├── poo/              → classes, herança, encapsulamento
+│   └── avancado/          → estruturas de dados, algoritmos mais complexos
+├── cpp/
+│   ├── fundamentos/
+│   ├── poo/
+│   ├── avancado/
+│   └── cs50/               → desafios do curso CS50 (Harvard), em C
+└── python/
+    ├── fundamentos/
+    └── poo/
+```
+
+Cada exercício individual fica em sua própria pasta, nomeada de forma descritiva (`kebab-case`), contendo o código-fonte e, quando aplicável, um breve contexto do que foi praticado.
+
+À medida que novos tipos de projeto forem entrando aqui, a mesma lógica se aplica: **linguagem → complexidade → exercício**, no máximo 3 cliques até o código.
+
+---
+
+## 🛠️ Tecnologias em foco
+
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Logic](https://img.shields.io/badge/Lógica_de_Programação-00599C?style=for-the-badge&logo=codeforces&logoColor=white)
+![Python](https://img.shields.io/badge/python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
 ---
 
-## ⚠️ Aviso de Integridade Acadêmica
-Este conteúdo é para fins de estudo e consulta. Se você é colega de curso no CIMATEC, utilize o código para entender a lógica, mas evite o plágio, pois isso prejudica o seu aprendizado e pode violar as normas da instituição
-
----
-
 ## 📬 Contato
-LinkedIn: *********
 
-E-mail: caue.vieira.lopes@gmail.com
+**LinkedIn:** [linkedin.com/in/cauevieiralopes](https://www.linkedin.com/in/cauevieiralopes/)
+
+**E-mail:** caue.vieira.lopes@gmail.com
