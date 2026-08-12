@@ -1,24 +1,31 @@
-# 📦 Sistema de Cadastro de Produtos (Introdução à POO em Java)
+# 📦 Sistema de Cadastro de Produtos v2.0 (Refatorado em POO)
 
-Este projeto marca o meu primeiro contato prático com os conceitos de **Programação Orientada a Objetos (POO)** em Java. Desenvolvido após estudos iniciais sobre modelagem de classes, o código simula o fluxo simples de recebimento de dados via terminal e cadastro de um produto na memória.
-
----
-
-## 🎯 Objetivo de Aprendizado
-O objetivo principal deste exercício foi transicionar da programação estruturada/procedural para o paradigma de **Orientação a Objetos**, compreendendo a divisão do projeto em camadas/pacotes e a criação de classes para representar entidades do mundo real.
+Este repositório registra a evolução e refatoração do meu primeiro código em **Programação Orientada a Objetos (POO)** em Java. O projeto simula o cadastro e exibição de um produto utilizando os pilares de Encapsulamento e separação em camadas.
 
 ---
 
-## 🛠️ Conceitos e Recursos Aplicados
+## 🔄 O que mudou nesta Refatoração (v2.0)?
 
-- **Modelagem de Classes & Entidades:** Criação da classe `Produto` para representar os dados do produto (nome e preço).
-- **Encapsulamento (Proteção de Dados):** Uso de atributos privados (`private`) na classe modelo, garantindo o acesso e manipulação de dados via métodos leitores e modificadores (**Getters e Setters**).
-- **Separação de Responsabilidades (Pacotes):**
-  - `br.com.cadastro.model`: Contém a estrutura e estado do dado (`Produto`).
-  - `br.com.cadastro.service`: Contém a regra de negócio/serviço (`ProdutoService`).
-  - `br.com.cadastro.controller`: Ponto de entrada da aplicação (`Main`) que gerencia a interatividade com o usuário.
-- **Manipulação de Data e Hora:** Utilização do `LocalDateTime.now()` da API `java.time` para registrar o momento exato do cadastro.
+- **Encapsulamento Aplicado:** Os atributos da classe `Produto` foram alterados para `private`.
+- **Implementação de Getters e Setters:** Controle total sobre a leitura e escrita dos dados do produto.
+- **Tratamento de Dados no Encapsulamento:** Aplicação automática de caixa alta (`.toUpperCase()`) ao atribuir o nome do produto.
+- **Passagem de Objetos por Parâmetro:** O serviço de exibição (`Services`) passou a receber o objeto completo `Produto` em vez de tipos primitivos isolados.
+- **Ajuste de Nomenclaturas:** Adequação das classes para o padrão `PascalCase` (`Produto` e `Services`).
 
+---
+
+## 🛠️ Estrutura do Projeto
+
+```text
+src/
+└── br/com/cadastro/
+    ├── controller/
+    │   └── Main.java       → Ponto de entrada, leitura de dados e orquestração.
+    ├── model/
+    │   └── Produto.java    → Entidade com atributos privados, getters e setters.
+    └── service/
+        └── Services.java   → Regra de negócio para formatação e exibição do produto.
+```
 ---
 
 ## 🚀 Como Executar
