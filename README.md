@@ -4,25 +4,26 @@ Este repositório reúne os exercícios, desafios de lógica e pequenos projetos
 
 O objetivo aqui é simples: documentar minha evolução técnica, treinar lógica e estrutura de código em diferentes linguagens, e manter um histórico organizado do que venho estudando.
 
+> 💡 Este é um repositório de treino e progressão, não uma vitrine de projetos finalizados. Para ver meus projetos completos, [confira meu perfil](https://github.com/cauevieiraLopes).
+
 ---
 
 ## 🗂️ Estrutura
 
 O repositório é organizado por **linguagem** e, dentro de cada uma, por **nível de complexidade** — assim dá pra encontrar rapidamente o que você procura, e também entender a progressão do meu aprendizado.
-
 ```
 ├── java/
-│   ├── fundamentos/     → sintaxe básica, condicionais, loops, funções
-│   ├── poo/              → classes, herança, encapsulamento
-│   └── avancado/          → estruturas de dados, algoritmos mais complexos
+│ ├── fundamentos/ → sintaxe básica, condicionais, loops, funções
+│ ├── poo/ → classes, herança, encapsulamento
+│ └── avancado/ → estruturas de dados, algoritmos mais complexos
 ├── cpp/
-│   ├── fundamentos/
-│   ├── poo/
-│   ├── avancado/
-│   └── cs50/               → desafios do curso CS50 (Harvard), em C
+│ ├── fundamentos/
+│ ├── poo/
+│ ├── avancado/
+│ └── cs50/ → desafios do curso CS50 (Harvard), em C
 └── python/
-    ├── fundamentos/
-    └── poo/
+├── fundamentos/
+└── poo/
 ```
 
 Cada exercício individual fica em sua própria pasta, nomeada de forma descritiva (`kebab-case`), contendo o código-fonte e, quando aplicável, um breve contexto do que foi praticado.
@@ -33,10 +34,12 @@ Cada exercício individual fica em sua própria pasta, nomeada de forma descriti
 
 ## 🛠️ Tecnologias em foco
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Python](https://img.shields.io/badge/python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+<p>
+   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" width="40" />&nbsp;&nbsp;
+   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" width="40" />&nbsp;&nbsp;
+   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" />&nbsp;&nbsp;
+   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="40" />
+</p>
 
 ---
 
