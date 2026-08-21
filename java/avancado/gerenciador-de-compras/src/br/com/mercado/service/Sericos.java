@@ -79,119 +79,43 @@ public class Sericos {
     public void adicionarProduto(int mercadoria) {
         int quantidade;
 
-        switch (mercadoria) {
-            case 1: //Adicionar o feijão
-                System.out.println("Produto: Feijão");
-                System.out.println("Preço R$ 09.30");
-                System.out.print("Quantidade: ");
-                quantidade = sc.nextInt();
+        double preco = 0;
+        String nome = "";
 
-                if (quantidade <= 0) {
-                    adicionarProduto(mercadoria);
-                } else {
-
-                    if (carrinho.containsKey("Feijão")) {
-                        carrinho.get("Feijão").setQuantidade(carrinho.get("Feijão").getQuantidade() + quantidade);
-                    } else {
-                        Produto produtoAtual = new Produto();
-                        produtoAtual.setPreco(930);
-                        produtoAtual.setQuantidade(quantidade);
-
-                        carrinho.put("Feijão", produtoAtual);
-                    }
-                }
-
-                break;
-            case 2: //Adicionar o arroz
-                System.out.println("Produto: Arroz");
-                System.out.println("Preço R$ 15.40");
-                System.out.print("Quantidade: ");
-                quantidade = sc.nextInt();
-
-                if (quantidade <= 0) {
-                    adicionarProduto(mercadoria);
-                } else {
-
-                    if (carrinho.containsKey("Arroz")) {
-                        carrinho.get("Arroz").setQuantidade(carrinho.get("Arroz").getQuantidade() + quantidade);
-                    } else {
-                        Produto produtoAtual = new Produto();
-                        produtoAtual.setPreco(1540);
-                        produtoAtual.setQuantidade(quantidade);
-
-                        carrinho.put("Arroz", produtoAtual);
-                    }
-                }
-
-                break;
-            case 3: //Adicionar o carne
-                System.out.println("Produto: Carne");
-                System.out.println("Preço R$ 28.80");
-                System.out.print("Quantidade: ");
-                quantidade = sc.nextInt();
-
-                if (quantidade <= 0) {
-                    adicionarProduto(mercadoria);
-                } else {
-
-                    if (carrinho.containsKey("Carne")) {
-                        carrinho.get("Carne").setQuantidade(carrinho.get("Carne").getQuantidade() + quantidade);
-                    } else {
-                        Produto produtoAtual = new Produto();
-                        produtoAtual.setPreco(2880);
-                        produtoAtual.setQuantidade(quantidade);
-
-                        carrinho.put("Carne", produtoAtual);
-                    }
-                }
-
-                break;
-
-            case 4: //Adicionar o Leite
-                System.out.println("Produto: Leite");
-                System.out.println("Preço R$ 12.50");
-                System.out.print("Quantidade: ");
-                quantidade = sc.nextInt();
-
-                if (quantidade <= 0) {
-                    adicionarProduto(mercadoria);
-                } else {
-
-                    if (carrinho.containsKey("Leite")) {
-                        carrinho.get("Leite").setQuantidade(carrinho.get("Leite").getQuantidade() + quantidade);
-                    } else {
-                        Produto produtoAtual = new Produto();
-                        produtoAtual.setPreco(1250);
-                        produtoAtual.setQuantidade(quantidade);
-
-                        carrinho.put("Leite", produtoAtual);
-                    }
-                }
-
-                break;
-            case 5: //Adicionar o Frango
-                System.out.println("Produto: Frango");
-                System.out.println("Preço R$ 25.30");
-                System.out.print("Quantidade: ");
-                quantidade = sc.nextInt();
-
-                if (quantidade <= 0) {
-                    adicionarProduto(mercadoria);
-                } else {
-
-                    if (carrinho.containsKey("Frango")) {
-                        carrinho.get("Frango").setQuantidade(carrinho.get("Frango").getQuantidade() + quantidade);
-                    } else {
-                        Produto produtoAtual = new Produto();
-                        produtoAtual.setPreco(2530);
-                        produtoAtual.setQuantidade(quantidade);
-
-                        carrinho.put("Frango", produtoAtual);
-                    }
-                }
-
-                break;
+        if(mercadoria == 1) {
+            preco = 930;
+            nome = "Feijão";
+        } else if (mercadoria == 2) {
+            preco = 1540;
+            nome = "Arroz";
+        } else if (mercadoria == 3) {
+            preco = 2880;
+            nome = "Carne";
+        } else if (mercadoria == 4) {
+            preco = 1250;
+            nome = "Leite";
+        } else if (mercadoria == 5) {
+            preco = 2530;
+            nome = "Frango";
         }
+
+        do {
+            System.out.println("Produto: " + nome);
+            System.out.println("Preço: R$ " + preco / 100);
+            System.out.print("Quantidade: ");
+            quantidade = sc.nextInt();
+        }while (quantidade <= 0);
+
+        if (carrinho.containsKey(nome)) {
+            carrinho.get(nome).setQuantidade(carrinho.get(nome).getQuantidade() + quantidade);
+        } else {
+            Produto produtoAtual = new Produto();
+            produtoAtual.setPreco(preco);
+            produtoAtual.setQuantidade(quantidade);
+
+            carrinho.put(nome, produtoAtual);
+        }
+
         menu();
     }
 
@@ -211,32 +135,31 @@ public class Sericos {
 
         System.out.println("Qual item deseja remover?");
         System.out.println("===========================");
-        if (carrinho.containsKey("Feijão")) {
-            System.out.println("1. Feijão x" + carrinho.get("Feijão").getQuantidade());
-        } else {
-            System.out.println("1. Feijão x0");
-        }
-        if (carrinho.containsKey("Arroz")) {
-            System.out.println("2. Arroz x" + carrinho.get("Arroz").getQuantidade());
-        } else {
-            System.out.println("2. Arroz x0");
-        }
-        if (carrinho.containsKey("Carne")) {
-            System.out.println("3. Carne x" + carrinho.get("Carne").getQuantidade());
-        } else {
-            System.out.println("3. Carne x0");
-        }
-        if (carrinho.containsKey("Leite")) {
-            System.out.println("4. Leite x" + carrinho.get("Leite").getQuantidade());
-        } else {
-            System.out.println("4. Leite x0");
-        }
-        if (carrinho.containsKey("Frango")) {
-            System.out.println("5. Frango x" + carrinho.get("Frango").getQuantidade());
-        } else {
-            System.out.println("5. Frango x0");
+        System.out.println("ID | Nome | Quantidade | Preço atual");
+        System.out.println("===========================");
+
+        for (Map.Entry<String, Produto> item : carrinho.entrySet()) {
+            String nome = item.getKey();
+            Produto produto = item.getValue();
+            int num = 0;
+
+            if (nome.equals("Feijão")) {
+                num = 1;
+            } else if (nome.equals("Arroz")) {
+                num = 2;
+            } else if (nome.equals("Carne")) {
+                num = 3;
+            } else if (nome.equals("Leite")) {
+                num = 4;
+            } else if (nome.equals("Frango")) {
+                num = 5;
+            }
+
+            System.out.println(num + ". " + nome + " - Quantidade x" + produto.getQuantidade() +" - Preço R$"+ (produto.getQuantidade() * produto.getPreco()) / 100);
         }
 
+        System.out.println("===========================");
+        System.out.print("Digite o ID do item que deseja remover: ");
         int opcao = sc.nextInt();
 
         int quantidade;
@@ -429,25 +352,13 @@ public class Sericos {
         System.out.println("      Lista de compras     ");
         System.out.println("===========================");
 
-        if (carrinho.containsKey("Feijão")) {
-            System.out.println("Feijão\t- Quantidade: " + carrinho.get("Feijão").getQuantidade());
-            valorAtual += (carrinho.get("Feijão").getQuantidade() * carrinho.get("Feijão").getPreco());
-        }
-        if (carrinho.containsKey("Arroz")) {
-            System.out.println("Arroz\t- Quantidade: " + carrinho.get("Arroz").getQuantidade());
-            valorAtual += (carrinho.get("Arroz").getQuantidade() * carrinho.get("Arroz").getPreco());
-        }
-        if (carrinho.containsKey("Carne")) {
-            System.out.println("Carne\t- Quantidade: " + carrinho.get("Carne").getQuantidade());
-            valorAtual += (carrinho.get("Carne").getQuantidade() * carrinho.get("Carne").getPreco());
-        }
-        if (carrinho.containsKey("Leite")) {
-            System.out.println("Leite\t- Quantidade: " + carrinho.get("Leite").getQuantidade());
-            valorAtual += (carrinho.get("Leite").getQuantidade() * carrinho.get("Leite").getPreco());
-        }
-        if (carrinho.containsKey("Frango")) {
-            System.out.println("Frango\t- Quantidade: " + carrinho.get("Frango").getQuantidade());
-            valorAtual += (carrinho.get("Frango").getQuantidade() * carrinho.get("Frango").getPreco());
+        for(Map.Entry<String, Produto> item : carrinho.entrySet()) {
+            String nome = item.getKey();
+            Produto produto = item.getValue();
+
+            System.out.println(nome + " -  Quantidade x" + produto.getQuantidade() + " - preço R$ " + (produto.getQuantidade() * produto.getPreco()) / 100);
+
+            valorAtual += produto.getPreco() * produto.getQuantidade();
         }
 
         System.out.println("===========================");
@@ -474,25 +385,15 @@ public class Sericos {
         System.out.println("Compra efetuada no dia: " + LocalDate.now());
         System.out.println("No horário: " + LocalTime.now());
         System.out.println("===========================");
-        if (carrinho.containsKey("Feijão")) {
-            System.out.println("Feijão\t- Quantidade: " + carrinho.get("Feijão").getQuantidade());
-            valorFinal += (carrinho.get("Feijão").getQuantidade() * carrinho.get("Feijão").getPreco());
-        }
-        if (carrinho.containsKey("Arroz")) {
-            System.out.println("Arroz\t- Quantidade: " + carrinho.get("Arroz").getQuantidade());
-            valorFinal += (carrinho.get("Arroz").getQuantidade() * carrinho.get("Arroz").getPreco());
-        }
-        if (carrinho.containsKey("Carne")) {
-            System.out.println("Carne\t- Quantidade: " + carrinho.get("Carne").getQuantidade());
-            valorFinal += (carrinho.get("Carne").getQuantidade() * carrinho.get("Carne").getPreco());
-        }
-        if (carrinho.containsKey("Leite")) {
-            System.out.println("Leite\t- Quantidade: " + carrinho.get("Leite").getQuantidade());
-            valorFinal += (carrinho.get("Leite").getQuantidade() * carrinho.get("Leite").getPreco());
-        }
-        if (carrinho.containsKey("Frango")) {
-            System.out.println("Frango\t- Quantidade: " + carrinho.get("Frango").getQuantidade());
-            valorFinal += (carrinho.get("Frango").getQuantidade() * carrinho.get("Frango").getPreco());
+
+        for(Map.Entry <String, Produto> item : carrinho.entrySet()) {
+            String nome = item.getKey();
+            Produto produto = item.getValue();
+
+            System.out.println(nome + " -  Quantidade x" + produto.getQuantidade() + " - preço R$ " + (produto.getQuantidade() * produto.getPreco()) / 100);
+
+
+            valorFinal += produto.getPreco() * produto.getQuantidade();
         }
 
         System.out.println("===========================");
