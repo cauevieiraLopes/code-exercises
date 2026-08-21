@@ -1,26 +1,26 @@
 # 🛒 Sistema de Gestão de Mercado e Carrinho em Java
 
-Aplicação de terminal desenvolvida em Java aplicando conceitos de **Programação Orientada a Objetos (POO)**, **Coleções (`HashMap`)** e manipulação de **Data/Hora (`java.time`)**. O sistema simula um fluxo completo de compras em um mercado, permitindo adicionar itens, remover quantidades, visualizar o carrinho dinâmico e emitir nota fiscal.
+Aplicação de terminal desenvolvida em Java aplicando **Programação Orientada a Objetos (POO)**, **Coleções Avançadas (`HashMap`)** e manipulação de **Data/Hora (`java.time`)**. O projeto simula o fluxo completo de um caixa de mercado, permitindo adição inteligente de itens, remoção controlada e emissão de nota fiscal.
 
 ---
 
 ## 🛠️ Tecnologias e Conceitos Aplicados
 
-- **Arquitetura em Camadas:** Organização clara de responsabilidades nos pacotes `controller`, `model` e `service`.
-- **Coleções com `HashMap`:** Armazenamento do carrinho no formato Chave-Valor (`Map<String, Produto>`), permitindo busca rápida com `.containsKey()`.
-- **Tratamento de Exceções (`RuntimeException`):** Validação de entradas do usuário para evitar estados inválidos no carrinho.
-- **Auditoria Temporal (`java.time`):** Uso de `LocalDate` e `LocalTime` para carimbar o momento exato do fechamento da compra na Nota Fiscal.
-- **Precisão Financeira:** Manipulação de valores monetários usando números inteiros para evitar imprecisões de arredondamento de ponto flutuante.
+- **Arquitetura em Camadas:** Divisão em `controller`, `model` e `service` para manter o código organizado e com responsabilidades bem definidas.
+- **Mapeamento de Dados (`HashMap`):** Uso da estrutura `Map<String, Produto>` para busca e manipulação eficiente dos itens no carrinho.
+- **Iteração Dinâmica com `Map.Entry`:** Refatoração de métodos para percorrer os pares de chave-valor (`entrySet()`), eliminando código estático e permitindo renderização dinâmica dos produtos e totais.
+- **Tratamento de Exceções (`RuntimeException`):** Controle de fluxo e mensagens de erro personalizadas para validação de opções inválidas do usuário.
+- **Carimbo Temporal (`java.time`):** Registro preciso da data (`LocalDate`) e do horário (`LocalTime`) no momento do fechamento e emissão da Nota Fiscal.
+- **Tratamento de Valores Financeiros:** Lógica baseada em centavos inteiros para evitar imprecisões e erros de arredondamento em operações monetárias.
 
 ---
 
 ## 📋 Funcionalidades
 
-1. **Realizar Compra:** Seleção de produtos do catálogo e adição ao carrinho especificando a quantidade.
-2. **Atualização Automática:** Se o produto já existe no carrinho, o sistema soma a nova quantidade à existente.
-3. **Remover Produto:** Permite decrementar a quantidade de um item específico ou removê-lo completamente do carrinho quando a quantidade chega a zero.
-4. **Exibir Carrinho:** Exibição dos itens selecionados com cálculo em tempo real do valor parcial.
-5. **Finalizar Compra:** Emissão de nota fiscal detalhada contendo data, horário e valor total final.
+1. **Realizar Compra:** Seleção de produtos do catálogo e adição ao carrinho com verificação automática de duplicidade (somando a quantidade caso o item já exista).
+2. **Remover Produto:** Consulta visual das quantidades e preços acumulados no carrinho, permitindo decrementar itens até a remoção completa.
+3. **Exibir Carrinho Dinâmico:** Listagem dos itens presentes no carrinho calculada via laço `for-each` com exibição de subtotais em tempo real.
+4. **Finalizar Compra & Nota Fiscal:** Fechamento do pedido com impressão detalhada do extrato contendo data, horário exato e valor total.
 
 ---
 
@@ -28,7 +28,7 @@ Aplicação de terminal desenvolvida em Java aplicando conceitos de **Programaç
 
 1. Certifique-se de ter o **JDK 17+** instalado.
 2. Clone este repositório ou baixe os arquivos fonte.
-3. Abra na sua IDE de preferência (IntelliJ IDEA, Eclipse, VS Code) e execute a classe `Main.java` localizada no pacote `br.com.mercado.controller`.
+3. Abra em sua IDE de preferência (IntelliJ IDEA, Eclipse, VS Code) e execute a classe `Main.java` localizada no pacote `br.com.mercado.controller`.
 
 ---
 
