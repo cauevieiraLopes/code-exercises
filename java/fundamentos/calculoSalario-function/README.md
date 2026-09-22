@@ -5,10 +5,6 @@
 
 Um projeto interativo via terminal criado para explorar e consolidar os conceitos de Programação Funcional introduzidos no Java 8. O programa resolve o problema de calcular o salário final de um funcionário aplicando regras sequenciais de bônus e impostos de forma limpa, demonstrando o poder das `Functional Interfaces` e do encadeamento de métodos (Pipelines).
 
-## Demonstração Visual
-
-![alt text](<Captura de tela 2026-09-22 094258.png>)
-
 ## Features (Funcionalidades)
 
 * **Validação de Entrada:** Um laço de repetição (`do-while`) garante que o sistema não aceite salários negativos ou zerados.
