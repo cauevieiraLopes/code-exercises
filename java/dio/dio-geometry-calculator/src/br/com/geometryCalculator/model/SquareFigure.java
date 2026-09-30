@@ -3,18 +3,14 @@ package br.com.geometryCalculator.model;
 public non-sealed class SquareFigure extends ModelFigure{
     private double size;
 
-    public SquareFigure(double size) {
-        setSize(size);
-        calcularArea();
-        System.out.println("A square with side " + getSize() + ", has an area of: " + getArea());
+    public SquareFigure() {
+
     }
 
-    @Override
     public void setSize(double size) {
         this.size = size;
     }
 
-    @Override
     public double getSize() {
         return size;
     }

@@ -5,6 +5,8 @@ import br.com.geometryCalculator.model.RectangleFigure;
 import br.com.geometryCalculator.model.SquareFigure;
 
 import java.util.Scanner;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class FigureServices {
 
@@ -32,47 +34,119 @@ public class FigureServices {
     }
 
     public void square() {
-        double size;
+        var ref = new Object() {
+            double size;
+        };
+
+        SquareFigure quadrado = new SquareFigure();
 
         System.out.println("===== SQUARE =====");
+
         do {
             System.out.print("Set size: ");
-            size = sc.nextDouble();
-        }while (size <= 0);
+            ref.size = sc.nextDouble();
+        }while (ref.size <= 0);
 
-        SquareFigure squareFigure = new SquareFigure(size);
+        Function<SquareFigure, SquareFigure> areaQuadrado = squareFigure -> {
+            squareFigure.setSize(ref.size);
+            squareFigure.calcularArea();
+
+            return squareFigure;
+        };
+
+        Consumer<SquareFigure> exibirInformacoes = squareFigure -> {
+            System.out.println("Um quadrado de lado: " + squareFigure.getSize());
+            System.out.println("Possui área: " + squareFigure.getArea());
+        };
+
+        Consumer<SquareFigure> pipeline = squareFigure -> {
+            squareFigure = areaQuadrado.apply(squareFigure);
+            exibirInformacoes.accept(squareFigure);
+        };
+
+        pipeline.accept(quadrado);
+
         sc.close();
     }
 
     public void rectangle() {
-        double base, height;
+
+        var ref = new Object() {
+            double base, height;
+        };
+
+        RectangleFigure retangulo = new RectangleFigure();
 
         System.out.println("===== RECTANGLE =====");
 
         do {
             System.out.print("Set base: ");
-            base = sc.nextDouble();
-        }while (base <= 0);
+            ref.base = sc.nextDouble();
+        }while ( ref.base <= 0);
 
         do {
             System.out.print("Set height: ");
-            height = sc.nextDouble();
-        }while (height <= 0);
+            ref.height = sc.nextDouble();
+        }while ( ref.height <= 0);
 
-        RectangleFigure rectangleFigure = new RectangleFigure(base, height);
+        Function<RectangleFigure, RectangleFigure> calcularArea = rectangleFigure -> {
+          rectangleFigure.setHeight(ref.height);
+          rectangleFigure.setBase(ref.base);
+          rectangleFigure.calcularArea();
+
+          return rectangleFigure;
+        };
+
+        Consumer<RectangleFigure> exibirInformacoes = rectangleFigure -> {
+            System.out.println("Retângulo de altura: " + rectangleFigure.getHeight());
+            System.out.println("E base: " + rectangleFigure.getBase());
+            System.out.println("Possui área: " + rectangleFigure.getArea());
+        };
+
+        Consumer<RectangleFigure> pipeline = rectangleFigure -> {
+            rectangleFigure = calcularArea.apply(rectangleFigure);
+            exibirInformacoes.accept(rectangleFigure);
+        };
+
+        pipeline.accept(retangulo);
+
         sc.close();
     }
 
     public void circle() {
-        double radius;
+
+        var ref = new Object() {
+            double radius;
+        };
+
+        CircleFigure circulo = new CircleFigure();
 
         System.out.println("===== CIRCLE =====");
+
         do {
             System.out.print("Set radius: ");
-            radius = sc.nextDouble();
-        }while (radius <= 0);
+            ref.radius = sc.nextDouble();
+        }while (ref.radius <= 0);
 
-        CircleFigure circleFigure = new CircleFigure(radius);
+        Function<CircleFigure, CircleFigure> calcularArea = circleFigure -> {
+          circleFigure.setRadius(ref.radius);
+          circleFigure.calcularArea();
+
+          return circleFigure;
+        };
+
+        Consumer<CircleFigure> exibirInformacoes = circleFigure -> {
+            System.out.println("Um círculo de raio: " + circleFigure.getRadius());
+            System.out.println("Possui área: " + circleFigure.getArea());
+        };
+
+        Consumer<CircleFigure> pipeline = circleFigure -> {
+          circleFigure = calcularArea.apply(circleFigure);
+          exibirInformacoes.accept(circleFigure);
+        };
+
+        pipeline.accept(circulo);
+
         sc.close();
     }
 }

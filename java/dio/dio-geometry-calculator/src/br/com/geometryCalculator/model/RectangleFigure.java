@@ -4,29 +4,24 @@ public non-sealed class RectangleFigure extends ModelFigure{
     private double base;
     private double height;
 
-    public RectangleFigure(double base, double height) {
-        setBase(base);
-        setHeight(height);
-        calcularArea();
-        System.out.println("a rectangle with base " + getBase() + " and height " + getHeight() + " has area: " + getArea());
+    public RectangleFigure() {
+
     }
 
-    @Override
+
     public void setHeight(double height) {
         this.height = height;
     }
 
-    @Override
+
     public void setBase(double base) {
         this.base = base;
     }
 
-    @Override
     public double getHeight() {
         return height;
     }
 
-    @Override
     public double getBase() {
         return base;
     }
