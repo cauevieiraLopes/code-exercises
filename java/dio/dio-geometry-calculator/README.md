@@ -84,4 +84,4 @@ Por ser uma aplicação de console, a homologação pode ser feita via testes ma
 
 * [x] **Refatoração com SOLID (ISP):** Aplicar o Princípio da Segregação de Interfaces (ISP). Atualmente, a `InterfaceFigure` agrupa métodos de todas as figuras (ex: `setRadius` e `setBase`). O objetivo é segregar essas interfaces para que um `SquareFigure` não precise conhecer a existência de um método `setRadius`.
 * [x] **Programação Funcional:** Refatorar a estrutura para utilizar as interfaces `Function` (para receber os dados geométricos e retornar o valor da área calculada de forma pura) e `Consumer` (para lidar com a exibição padronizada das mensagens no console).
-* [ ] **Cálculo de Perímetro:** Expandir as funcionalidades adicionando o método `calcularPerimetro()` em toda a hierarquia de figuras.
+* [x] **Cálculo de Perímetro:** Expandir as funcionalidades adicionando o método `calcularPerimetro()` em toda a hierarquia de figuras.

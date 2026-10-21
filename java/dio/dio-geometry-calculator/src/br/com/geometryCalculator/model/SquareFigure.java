@@ -21,7 +21,7 @@ public non-sealed class SquareFigure extends ModelFigure{
     }
 
     @Override
-    public double getArea() {
-        return area;
+    public void calcularPerimetro() {
+        perimetro = size * 4;
     }
 }

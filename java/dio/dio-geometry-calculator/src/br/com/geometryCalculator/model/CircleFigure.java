@@ -1,7 +1,7 @@
 package br.com.geometryCalculator.model;
 
 public non-sealed class CircleFigure extends ModelFigure {
-    private final double pi = 3.14;
+    private final double pi = 3.14159;
     private double radius;
 
     public CircleFigure() {
@@ -22,7 +22,7 @@ public non-sealed class CircleFigure extends ModelFigure {
     }
 
     @Override
-    public double getArea() {
-        return area;
+    public void calcularPerimetro() {
+        perimetro = 2 * pi * radius;
     }
 }

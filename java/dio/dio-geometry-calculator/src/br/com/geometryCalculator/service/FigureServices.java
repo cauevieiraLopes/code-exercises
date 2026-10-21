@@ -47,6 +47,13 @@ public class FigureServices {
             ref.size = sc.nextDouble();
         }while (ref.size <= 0);
 
+        Function<SquareFigure, SquareFigure> perimetroQuadrado = squareFigure -> {
+            squareFigure.setSize(ref.size);
+            squareFigure.calcularPerimetro();
+
+            return squareFigure;
+        };
+
         Function<SquareFigure, SquareFigure> areaQuadrado = squareFigure -> {
             squareFigure.setSize(ref.size);
             squareFigure.calcularArea();
@@ -57,10 +64,12 @@ public class FigureServices {
         Consumer<SquareFigure> exibirInformacoes = squareFigure -> {
             System.out.println("Um quadrado de lado: " + squareFigure.getSize());
             System.out.println("Possui área: " + squareFigure.getArea());
+            System.out.println("Possui perímetro: " + squareFigure.getPerimetro());
         };
 
         Consumer<SquareFigure> pipeline = squareFigure -> {
             squareFigure = areaQuadrado.apply(squareFigure);
+            squareFigure = perimetroQuadrado.apply(squareFigure);
             exibirInformacoes.accept(squareFigure);
         };
 
@@ -89,6 +98,14 @@ public class FigureServices {
             ref.height = sc.nextDouble();
         }while ( ref.height <= 0);
 
+        Function<RectangleFigure, RectangleFigure> calcularPerimetro = rectangleFigure -> {
+            rectangleFigure.setHeight(ref.height);
+            rectangleFigure.setBase(ref.base);
+            rectangleFigure.calcularPerimetro();
+
+            return rectangleFigure;
+        };
+
         Function<RectangleFigure, RectangleFigure> calcularArea = rectangleFigure -> {
           rectangleFigure.setHeight(ref.height);
           rectangleFigure.setBase(ref.base);
@@ -101,10 +118,12 @@ public class FigureServices {
             System.out.println("Retângulo de altura: " + rectangleFigure.getHeight());
             System.out.println("E base: " + rectangleFigure.getBase());
             System.out.println("Possui área: " + rectangleFigure.getArea());
+            System.out.println("Possui perímetro: " + rectangleFigure.getPerimetro());
         };
 
         Consumer<RectangleFigure> pipeline = rectangleFigure -> {
             rectangleFigure = calcularArea.apply(rectangleFigure);
+            rectangleFigure = calcularPerimetro.apply(rectangleFigure);
             exibirInformacoes.accept(rectangleFigure);
         };
 
@@ -128,6 +147,13 @@ public class FigureServices {
             ref.radius = sc.nextDouble();
         }while (ref.radius <= 0);
 
+        Function<CircleFigure, CircleFigure> calcularPerimetro = circleFigure -> {
+            circleFigure.setRadius(ref.radius);
+            circleFigure.calcularPerimetro();
+
+            return circleFigure;
+        };
+
         Function<CircleFigure, CircleFigure> calcularArea = circleFigure -> {
           circleFigure.setRadius(ref.radius);
           circleFigure.calcularArea();
@@ -138,10 +164,12 @@ public class FigureServices {
         Consumer<CircleFigure> exibirInformacoes = circleFigure -> {
             System.out.println("Um círculo de raio: " + circleFigure.getRadius());
             System.out.println("Possui área: " + circleFigure.getArea());
+            System.out.println("Possui perímetro: " + circleFigure.getPerimetro());
         };
 
         Consumer<CircleFigure> pipeline = circleFigure -> {
           circleFigure = calcularArea.apply(circleFigure);
+          circleFigure = calcularPerimetro.apply(circleFigure);
           exibirInformacoes.accept(circleFigure);
         };
 

@@ -13,7 +13,6 @@ public non-sealed class RectangleFigure extends ModelFigure{
         this.height = height;
     }
 
-
     public void setBase(double base) {
         this.base = base;
     }
@@ -32,7 +31,7 @@ public non-sealed class RectangleFigure extends ModelFigure{
     }
 
     @Override
-    public double getArea() {
-        return area;
+    public void calcularPerimetro() {
+        perimetro = (base * 2) + (height * 2);
     }
 }
