@@ -1,7 +1,7 @@
 package br.com.taskList.model;
 
 public class ModelTask {
-    private String task;
+    private String task, completionDay;
     private boolean status;
 
     public ModelTask(String task) {
@@ -19,5 +19,13 @@ public class ModelTask {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public void setCompletionDay(String completionDay) {
+        this.completionDay = completionDay;
+    }
+
+    public String getCompletionDay() {
+        return completionDay;
     }
 }
