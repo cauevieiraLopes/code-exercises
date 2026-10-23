@@ -2,6 +2,7 @@ package br.com.taskList.service;
 
 import br.com.taskList.model.ModelTask;
 
+import java.text.Normalizer;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -19,11 +20,21 @@ public class ServiceTask {
             System.out.println("1. Adicionar Tarefa");
             System.out.println("2. Ver Lista de Tarefa");
             System.out.println("3. Concluir Tarefa");
-            System.out.println("4. Sair");
+            System.out.println("4. Excluir Tarefa");
+            System.out.println("5. Sair");
             System.out.println("-------------------------");
             System.out.print("Opção: ");
+            int opcao;
 
-            int opcao = sc.nextInt();
+            while (!sc.hasNextInt()){
+                System.out.println("Digite um número inteiro!");
+
+                sc.next();
+
+                System.out.print("Opção: ");
+            }
+
+            opcao = sc.nextInt();
 
             //Direcionamento para função correta!
             switch (opcao) {
@@ -35,16 +46,12 @@ public class ServiceTask {
                     verLista();
                 }
                 case 3 -> concluirTarefa();
-                case 4 -> {
+                case 4 -> excluirTarefa();
+                case 5 -> {
                     return;
                 }
-                default -> {
-                    System.out.println("\n-------------------------");
-                    System.out.println("Opção Inválida");
-                    System.out.println("---------------------------");
-                    menu();
-                }
             }
+            break;
         }
     }
 
@@ -53,8 +60,14 @@ public class ServiceTask {
 
         sc.nextLine();
 
+        System.out.println("---------------------------");
         System.out.print("Digite a tarefa: ");
         String receberTarefa = sc.nextLine();
+
+        //Normalizando o texto
+        receberTarefa = receberTarefa.replaceAll("\\s+", " ").trim();
+        receberTarefa = Normalizer.normalize(receberTarefa,
+                Normalizer.Form.NFD).replaceAll("\\p{M}", "");
 
         //Criação do String builder e DateTime para melhor organização do texto
         StringBuilder builder = new StringBuilder();
@@ -75,6 +88,7 @@ public class ServiceTask {
         System.out.println("-------------------------");
 
         listaTarefas.add(novaTarefa);
+        menu();
     }
 
     public void concluirTarefa() {
@@ -93,7 +107,18 @@ public class ServiceTask {
         while (true) {
             System.out.println("-------------------------");
             System.out.print("Escolha a tarefa que quer concluir: ");
-            int opcao = sc.nextInt();
+            int opcao;
+
+            while(!sc.hasNextInt()) {
+                System.out.println("-------------------------");
+                System.out.println("Digite um número inteiro!");
+
+                sc.next();
+
+                System.out.print("Escolha a tarefa que quer concluir: ");
+            }
+
+            opcao = sc.nextInt();
 
             if (opcao < 0 || opcao > numeroDeItens - 1) {
                 System.out.println("Escolha uma tarefa válida!");
@@ -109,6 +134,8 @@ public class ServiceTask {
                 break;
             }
         }
+
+        menu();
     }
 
     public void verLista() {
@@ -118,15 +145,52 @@ public class ServiceTask {
             return;
         }
 
-        for (ModelTask listaTarefa : listaTarefas) {
-            System.out.println(listaTarefa.getTask());
-            System.out.println("Tarefa concluida: " + listaTarefa.getStatus());
-            if (listaTarefa.getStatus()) {
-                System.out.println("Data de conclusão: " + listaTarefa.getCompletionDay());
+        for (int i = 0; i < listaTarefas.size(); i++){
+            System.out.println("[" + i + "]" + listaTarefas.get(i).getTask());
+            System.out.println("Tarefa concluida: " + listaTarefas.get(i).getStatus());
+            if (listaTarefas.get(i).getStatus()) {
+                System.out.println("Data de conclusão: " + listaTarefas.get(i).getCompletionDay());
             }
             System.out.println("--------------------------");
         }
 
-        System.out.println("\n");
+        System.out.println();
+        menu();
+    }
+
+    public void excluirTarefa() {
+        if (listaTarefas.isEmpty()){
+            System.out.println("A lista está vazia!\n");
+            menu();
+        }
+
+        for (int i = 0; i < listaTarefas.size(); i++) {
+            System.out.println("[" + i + "]" + listaTarefas.get(i).getTask());
+        }
+
+        System.out.print("\nQual tarefa deseja excluir: ");
+        int option;
+
+        while (!sc.hasNextInt()) {
+            System.out.println("--------------------------");
+            System.out.println("Digite um número inteiro!");
+
+            sc.next();
+
+            System.out.print("Qual tarefa deseja excluir: ");
+        }
+
+        option = sc.nextInt();
+
+        if (option < 0 || option >= listaTarefas.size()) {
+            System.out.println("\n--------------------------");
+            System.out.println("Escolha uma tarefa válida!");
+            System.out.println("--------------------------\n");
+            menu();
+        } else {
+            listaTarefas.remove(option);
+            System.out.println("Tarefa excluída!\n");
+            menu();
+        }
     }
 }
