@@ -177,26 +177,26 @@ Quando uma tarefa é concluída, a aplicação registra seu status e armazena a 
 
 Os seguintes cenários podem ser utilizados para verificar o comportamento da aplicação:
 
-- [ ] Cadastrar uma tarefa e verificar se ela aparece na listagem.
-- [ ] Cadastrar várias tarefas e conferir a ordem de exibição.
-- [ ] Verificar se a data e o horário de criação são registrados.
-- [ ] Concluir uma tarefa utilizando seu índice.
-- [ ] Verificar se o status da tarefa é atualizado corretamente.
-- [ ] Conferir se a data de conclusão aparece após a conclusão da tarefa.
-- [ ] Tentar concluir uma tarefa quando a lista está vazia.
-- [ ] Informar um índice inexistente durante a seleção de uma tarefa.
-- [ ] Informar uma opção inválida no menu.
-- [ ] Verificar o comportamento do programa quando uma entrada numérica recebe texto.
+- [x] Cadastrar uma tarefa e verificar se ela aparece na listagem.
+- [x] Cadastrar várias tarefas e conferir a ordem de exibição.
+- [x] Verificar se a data e o horário de criação são registrados.
+- [x] Concluir uma tarefa utilizando seu índice.
+- [x] Verificar se o status da tarefa é atualizado corretamente.
+- [x] Conferir se a data de conclusão aparece após a conclusão da tarefa.
+- [x] Tentar concluir uma tarefa quando a lista está vazia.
+- [x] Informar um índice inexistente durante a seleção de uma tarefa.
+- [x] Informar uma opção inválida no menu.
+- [x] Verificar o comportamento do programa quando uma entrada numérica recebe texto.
 
 ## Roadmap
 
-- [ ] Aprimorar a validação das entradas do usuário.
-- [ ] Evitar chamadas recursivas desnecessárias durante a navegação pelo menu.
-- [ ] Impedir o cadastro de tarefas com descrições vazias.
-- [ ] Exibir os índices das tarefas também na listagem geral.
+- [x] Aprimorar a validação das entradas do usuário.
+- [x] Evitar chamadas recursivas desnecessárias durante a navegação pelo menu.
+- [x] Impedir o cadastro de tarefas com descrições vazias.
+- [x] Exibir os índices das tarefas também na listagem geral.
 - [ ] Separar a descrição da tarefa dos metadados de criação.
 - [ ] Avaliar o armazenamento das datas como objetos temporais, em vez de strings formatadas.
-- [ ] Permitir a edição e a exclusão de tarefas.
+- [x] Permitir a exclusão de tarefas.
 
 ## Objetivo de aprendizagem
 
