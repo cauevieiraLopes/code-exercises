@@ -194,8 +194,8 @@ Os seguintes cenários podem ser utilizados para verificar o comportamento da ap
 - [x] Evitar chamadas recursivas desnecessárias durante a navegação pelo menu.
 - [x] Impedir o cadastro de tarefas com descrições vazias.
 - [x] Exibir os índices das tarefas também na listagem geral.
-- [ ] Separar a descrição da tarefa dos metadados de criação.
-- [ ] Avaliar o armazenamento das datas como objetos temporais, em vez de strings formatadas.
+- [x] Separar a descrição da tarefa dos metadados de criação.
+- [x] Avaliar o armazenamento das datas como objetos temporais, em vez de strings formatadas.
 - [x] Permitir a exclusão de tarefas.
 
 ## Objetivo de aprendizagem
@@ -203,6 +203,13 @@ Os seguintes cenários podem ser utilizados para verificar o comportamento da ap
 O Task List foi desenvolvido para consolidar conhecimentos de Java por meio de uma aplicação funcional de gerenciamento de tarefas.
 
 A refatoração permitiu explorar o uso de `StringBuilder` na construção de strings e da API `java.time` para obter e formatar datas e horários. O projeto também contribui para a prática de Programação Orientada a Objetos, manipulação de coleções, organização de código e validação de entradas.
+
+### Observação
+
+O menu tem dificuldades em interpretar o comando 5 "Sair" em alguns cenários, sendo necessário selecionar ele mais de uma vez para seu comando ser realizado. 
+
+O motivo disso ocorrer ainda não foi compreendido e solucionado. Em geral, o funcionamento do código está da forma prevista e apta para uma melhoria geral futuramente!
+
 
 ## Licença
 
