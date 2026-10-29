@@ -4,7 +4,7 @@
 ![POO](https://img.shields.io/badge/Paradigma-POO-007396?style=for-the-badge)
 ![DateTime](https://img.shields.io/badge/Java-Time%20API-007396?style=for-the-badge&logo=openjdk&logoColor=white)
 ![StringBuilder](https://img.shields.io/badge/Java-StringBuilder-6A5ACD?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ## Sobre o projeto
