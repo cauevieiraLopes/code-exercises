@@ -2,6 +2,8 @@ package br.com.TextAnalyzer.service;
 
 import br.com.TextAnalyzer.model.Text;
 
+import java.text.Normalizer;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class TextService {
@@ -24,6 +26,21 @@ public class TextService {
         menu();
     }
 
+    public int verificarNumero() {
+        int num;
+
+        while (!sc.hasNextInt()) {
+            System.out.println("Digite um número inteiro! ");
+
+            sc.next();
+
+            System.out.print("Digite novamente: ");
+        }
+
+        num = sc.nextInt();
+
+        return num;
+    }
 
     public void menu() {
         System.out.println("========== TEXT ANALYZER ==========\n");
@@ -36,7 +53,7 @@ public class TextService {
         System.out.println("7. Exibir estatísticas completas");
         System.out.println("0. Sair\n");
         System.out.println("Escolha uma opção: ");
-        int option = sc.nextInt();
+        int option = verificarNumero();
 
         switch (option) {
             case 0 -> {
@@ -80,8 +97,16 @@ public class TextService {
 
         System.out.print("Digite a palavra que deseja encontrar: ");
         String alvo = sc.nextLine().toUpperCase().trim();
-        String texto = text.getTextoSimples().toUpperCase();
 
+        alvo = Normalizer.normalize(
+                alvo, Normalizer.Form.NFD).replaceAll("\\p{M}", "").replaceAll("\\s+", "");
+
+        String texto = text.getTextoSimples();
+
+        texto = Normalizer.normalize(
+          texto, Normalizer.Form.NFD).replaceAll("\\p{M}", "").toUpperCase();
+
+        
         if (texto.contains(alvo)) {
             System.out.println("Palavra encontrada!");
             System.out.println("Posição inicial: " + texto.indexOf(alvo));
@@ -99,8 +124,14 @@ public class TextService {
         System.out.print("Palavra que deseja substituir: ");
         String alvo = sc.nextLine();
 
+        alvo = Normalizer.normalize(
+               alvo, Normalizer.Form.NFD).replaceAll("\\s+", " ").toUpperCase();
+
         System.out.print("Palavra a substituir: ");
-        String substituta = sc.nextLine();
+        String substituta = sc.nextLine().trim().toUpperCase();
+
+        substituta = Normalizer.normalize(
+                substituta, Normalizer.Form.NFD).replaceAll("\\s+", " ");
 
         int option;
 
@@ -108,11 +139,14 @@ public class TextService {
         do {
             System.out.println("\n1. Substituir todas as ocorrências");
             System.out.println("2. Substituir apenas a primeira ocorrência");
-            System.out.print("Opção: ");
-            option = sc.nextInt();
+            option = verificarNumero();
         }while (option > 2 || option < 1);
 
         String texto = text.getTextoSimples();
+
+        texto = Normalizer.normalize(
+                texto, Normalizer.Form.NFD).replaceAll("\\s+", " ").toUpperCase();
+
         if (option == 1) {
             texto = texto.replace(alvo, substituta);
         } else {
@@ -130,12 +164,12 @@ public class TextService {
 
         do {
             System.out.print("Índice inicial: ");
-            indiceInicial = sc.nextInt();
+            indiceInicial = verificarNumero();
         }while (indiceInicial < 0 || indiceInicial >= text.getTextoSimples().length());
 
         do {
             System.out.print("Índice final: ");
-            indiceFinal = sc.nextInt();
+            indiceFinal = verificarNumero();
         }while (indiceFinal <= indiceInicial || indiceFinal > text.getTextoSimples().length());
 
         String texto = text.getTextoSimples();
