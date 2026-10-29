@@ -5,7 +5,7 @@
 ![Strings](https://img.shields.io/badge/Manipula%C3%A7%C3%A3o-Strings-4B0082?style=for-the-badge)
 ![Interface](https://img.shields.io/badge/Interface-CLI-555555?style=for-the-badge)
 ![Git](https://img.shields.io/badge/Git-Versionamento-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
 ## Sobre o projeto
 
@@ -192,13 +192,13 @@ O projeto pode ser validado inicialmente por meio de testes manuais no terminal.
 Cenários recomendados:
 
 - [ ] Informar um texto vazio.
-- [ ] Inserir espaços consecutivos entre palavras.
+- [X] Inserir espaços consecutivos entre palavras.
 - [ ] Procurar uma palavra inexistente.
 - [ ] Procurar um termo que aparece dentro de outra palavra.
-- [ ] Substituir termos que aparecem várias vezes no texto.
-- [ ] Informar índices inválidos durante a extração de trechos.
-- [ ] Digitar letras quando o programa solicitar um número.
-- [ ] Analisar textos contendo acentos, pontuação e números.
+- [X] Substituir termos que aparecem várias vezes no texto.
+- [X] Informar índices inválidos durante a extração de trechos.
+- [X] Digitar letras quando o programa solicitar um número.
+- [X] Analisar textos contendo acentos, pontuação e números.
 
 A implementação de testes automatizados com JUnit pode ser considerada em uma evolução futura do projeto.
 
@@ -206,12 +206,12 @@ A implementação de testes automatizados com JUnit pode ser considerada em uma 
 
 ![Roadmap](https://img.shields.io/badge/Roadmap-Evolu%C3%A7%C3%A3o%20do%20Projeto-0078D4?style=for-the-badge)
 
-- [ ] Aprimorar a validação de entradas numéricas e textuais.
-- [ ] Melhorar o tratamento de erros durante a interação com o usuário.
-- [ ] Aprimorar a identificação de palavras, considerando diferentes espaços em branco e pontuações.
-- [ ] Aprimorar a análise de caracteres acentuados.
-- [ ] Avaliar melhorias na separação de responsabilidades entre as camadas.
-- [ ] Revisar a documentação e os exemplos de utilização após a evolução do projeto.
+- [X] Aprimorar a validação de entradas numéricas e textuais.
+- [X] Melhorar o tratamento de erros durante a interação com o usuário.
+- [X] Aprimorar a identificação de palavras, considerando diferentes espaços em branco e pontuações.
+- [X] Aprimorar a análise de caracteres acentuados.
+- [X] Avaliar melhorias na separação de responsabilidades entre as camadas.
+- [X] Revisar a documentação e os exemplos de utilização após a evolução do projeto.
 
 ## Objetivo de aprendizagem
 
@@ -222,9 +222,7 @@ O desenvolvimento permite praticar manipulação de strings, validação de dado
 O projeto também serve como base para futuras melhorias relacionadas à qualidade, à legibilidade e à manutenção do código.
 
 ## Autor
-Cauê Vieira Lopes - [Perfil no Git-Hub](https://github.com/cauevieiraLopes)
 
----
+**Cauê Vieira Lopes**
 
-![Status](https://img.shields.io/badge/Projeto-Em%20Desenvolvimento-yellow?style=for-the-badge)
-![Linguagem](https://img.shields.io/badge/Linguagem-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cauevieiraLopes)
