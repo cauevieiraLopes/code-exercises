@@ -258,4 +258,5 @@ A licença deverá ser formalizada por meio da inclusão de um arquivo `LICENSE`
 
 ## Autor
 
-**Cauê Vieira Lopes** — [GitHub](https://github.com/cauevieiraLopes)
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cauevieiraLopes)
+
